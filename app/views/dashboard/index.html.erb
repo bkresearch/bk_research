@@ -1,0 +1,5 @@
+<h1>Welcome to your user dashboard, <%= @user.first_name %></h1>
+<% @user.client.documents.each do |doc| %>
+<%= doc.file_name %><br><br>
+<% end %>
+
