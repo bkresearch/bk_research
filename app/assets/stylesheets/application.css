@@ -49,9 +49,10 @@ body {
 
 .main-header {
   text-align: center;
-  padding-top: 20%;
-  padding-bottom: 40%;
-  color: rgba(255,255,255,0.78);
+  padding-top: 10%;
+  padding-bottom: 10%;
+  margin-bottom: 0%;
+  color: rgba(1,1,1,0.78);
 }
 
 .about-us {
