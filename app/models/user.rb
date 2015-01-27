@@ -6,4 +6,12 @@ class User < ActiveRecord::Base
 
   belongs_to :client
   has_many :documents, through: :client
+
+  # def is_admin?
+  # 	.admin
+  # end
+
+	def current_admin
+	  current_user && current_user.is_admin
+	end
 end

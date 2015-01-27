@@ -1,4 +1,22 @@
-<div class="main-header">
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<%= stylesheet_link_tag "index" %>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">console.log("document is ready")</script>
+		<title>BK Research, LLC</title>
+
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <a class="navbar-brand" href="/">BK Research, LLC</a>
+      <a href="/users/sign_in" role="button" class="btn btn-default navbar-btn navbar-right">Client Login</a>
+    </nav>
+  <div class="main-header">
   	<h1>BK Research, LLC</h1>
   </div>
 	<div class="about-us">
@@ -29,3 +47,9 @@
 			<embed width="320" height="270" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=244%205th%20Avenue%2C%20NY%2C%20United%20States&key=AIzaSyAYVdPeK6gjvmvCvkQ18smST6k2WW1Svrk"></embed>
 		</div>	
   </div>
+
+  </body>
+  <footer>
+    <p>BK Research, LLC  |  Copyright &copy; 2014</p>
+  </footer>
+</html>

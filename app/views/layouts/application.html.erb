@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>BK Research, LLC</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div id="user_nav">
-	<% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign Up", new_user_registration_path %> or <%= link_to "Sign In", new_user_session_path  %>
-  <% end %>
-</div>
+	<head>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">console.log("document is ready")</script>
+		<title>BK Research, LLC</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <a class="navbar-brand" href="/">BK Research, LLC</a>
+      <% if current_user %>
+      <div class="navbar-btn navbar-right">
+        <%= button_to('Logout', destroy_user_session_path, :method => :delete, :class => "btn btn-default") %>
+      </div>
+      <p class="navbar-text navbar-right">Welcome, <%= current_user.first_name %> <%= current_user.last_name %>!</p>
+      <% else %>
+      <a href="/users/sign_in" role="button" class="btn btn-default navbar-btn navbar-right">Client Login</a>
+      <% end %>
+    </nav>
 
-<% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+	<div class="container">
+    <%= yield %>
+  </div>
 
-<%= yield %>﻿
-
-</body>
+  </body>
+  <footer>
+    <p>BK Research, LLC  |  Copyright &copy; 2014</p>
+  </footer>
 </html>

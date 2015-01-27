@@ -42,3 +42,6 @@ gem 'spring',        group: :development
 gem 'devise'
 # User CarrierWave for uploading documents
 gem 'carrierwave'
+# Use ActiveAdmin to create Admin interface
+gem 'rails_admin'
+
